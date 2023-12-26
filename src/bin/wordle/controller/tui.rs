@@ -47,6 +47,7 @@ impl Controller {
         let game_over = loop {
             self.stdout.flush()?;
             if let event::Event::Key(key) = event::read()? {
+                println!("KEY {:?}", key);
                 match (key.code, key.modifiers) {
                     (KeyCode::Char('w'), KeyModifiers::CONTROL) => {
                         self.word.clear();
