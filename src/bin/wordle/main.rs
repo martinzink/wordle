@@ -13,11 +13,7 @@ use rand::Rng;
 fn main() -> eyre::Result<()> {
     let app = App::parse();
 
-    let word_set = if app.original {
-        cl_wordle::words::ORIGINAL
-    } else {
-        cl_wordle::words::NYTIMES
-    };
+    let word_set = cl_wordle::words::GERMAN;
 
     let mut game = match app.game_mode {
         None => Game::new(word_set)?,

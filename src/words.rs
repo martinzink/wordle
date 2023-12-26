@@ -1,3 +1,4 @@
+mod german;
 mod nytimes;
 mod original;
 
@@ -28,6 +29,13 @@ pub const NYTIMES: WordSet<'static> = WordSet {
     date_offset: time::macros::date!(2021 - 06 - 19),
     solutions: nytimes::FINAL,
     acceptable: nytimes::ACCEPT,
+};
+
+pub const GERMAN: WordSet<'static> = WordSet {
+    #[cfg(feature = "time")]
+    date_offset: time::macros::date!(2021 - 06 - 19),
+    solutions: german::FINAL,
+    acceptable: german::ACCEPT,
 };
 
 impl<'a> WordSet<'a> {

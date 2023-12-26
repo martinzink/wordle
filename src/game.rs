@@ -2,7 +2,8 @@ use std::{fmt, ops::Deref};
 
 use crate::{
     state::{GuessError, State},
-    Matches, words::WordSet,
+    words::WordSet,
+    Matches,
 };
 use eyre::{ensure, Result};
 
@@ -83,9 +84,9 @@ impl Game {
     /// Indicate whether hard mode is active or not
     pub fn hard_mode_indicator(&self) -> &str {
         if self.hard_mode {
-            return "*"
+            return "*";
         } else {
-            return ""
+            return "";
         }
     }
 

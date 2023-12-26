@@ -54,7 +54,7 @@ impl Controller {
                     }
                     (KeyCode::Esc, _) | (KeyCode::Char('c'), KeyModifiers::CONTROL) => {
                         return Ok(None);
-                    },
+                    }
                     (KeyCode::Enter, _) if self.word.len() == 5 => match self.guess() {
                         Ok(()) => {
                             self.display_window()?;
@@ -86,7 +86,7 @@ impl Controller {
                                 back = cursor::MoveLeft(1),
                                 bol = cursor::MoveLeft(5),
                                 word = self.word.to_ascii_uppercase()
-                                )?;
+                            )?;
                         } else {
                             write!(self.stdout, "{back} {back}", back = cursor::MoveLeft(1))?;
                         }
